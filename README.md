@@ -26,15 +26,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Express
 - Nodemon
 - API
-- 
 
 ## 💻 Projeto
 
 Projeto desenvolvido como meio de avaliação do curso de desenvolvedor full stack da @blueEdtech.  
 
-## :information_source: Layout
- 
-Você pode visualizar o layout do projeto através desse link: https://projeto4-mod2.herokuapp.com/
+
 
 ## :memo: Licença
 
