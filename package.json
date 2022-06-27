@@ -1,0 +1,28 @@
+{
+  "name": "modulo3-projeto1",
+  "version": "1.0.0",
+  "description": "Projeto 1 do Modulo 3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeCristo/Modulo3-Projeto1.git"
+  },
+  "keywords": [],
+  "author": "Felipe Cristo de Freitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeCristo/Modulo3-Projeto1/issues"
+  },
+  "homepage": "https://github.com/FelipeCristo/Modulo3-Projeto1#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
