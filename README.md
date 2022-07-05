@@ -23,6 +23,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Express
 - Nodemon
 - API
+- Mongo-DB
+- Middleware
 
 ## 💻 Projeto
 
