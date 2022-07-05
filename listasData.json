@@ -1,0 +1,20 @@
+[
+  {
+    
+    "tarefa": "Fazer compras",
+    "hora": 14.45,
+    "local": "Mercado Costa Azul"
+  },
+  {
+    
+    "tarefa": "Ir ao Médico",
+    "hora": 8.30,
+    "local": "Climaze"
+  },
+  {
+    
+    "tarefa": "Cinema com Esposa",
+    "hora": 20.00,
+    "local": "kinoplex"
+  }
+]

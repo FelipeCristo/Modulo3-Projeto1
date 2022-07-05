@@ -1,43 +1,60 @@
 const listasService = require('../services/lista.service');
+const mongoose = require('mongoose');
 
-const findAllListasController = (req, res) => {
-  const listas = listasService.findAllListasService();
+const findAllListasController = async (req, res) => {
+  const listas = await listasService.findAllListasService();
+  if (listas.length == 0) {
+    return res
+      .status(404)
+      .send({ message: 'Não existe Tarefas cadastrada na Lista' });
+  }
   res.send(listas);
 };
 
-const findByIdListaController = (req, res) => {
-  const parametroId = Number(req.params.id);
-  const escolhaLista = listasService.findByIdListaService(parametroId);
+const findByIdListaController = async (req, res) => {
+  const idParam = req.params.id;
+
+  const escolhaLista = await listasService.findByIdListaService(idParam);
+
+  if (!escolhaLista) {
+    return res
+      .status(404)
+      .send({ message: 'Tarefa não Encontrada na Lista! Tente outro ID' });
+  }
+
   res.send(escolhaLista);
 };
-
-const createListaController = (req, res) => {
+const createListaController = async (req, res) => {
   const lista = req.body;
-  const newLista = listasService.createListaService(lista);
-  res.send(newLista);
+
+  const novaLista = await listasService.createListaService(lista);
+  res.status(201).send(novaLista);
 };
 
-const updateListaController = (req, res) => {
-  const idParm = Number(req.params.id);
+const updateListaController = async (req, res) => {
+  const idParam = req.params.id;
+
   const listaEdit = req.body;
-  const updateLista = listasService.updateListaService(
-    idParm,
+
+  const updateLista = await listasService.updateListaService(
+    idParam,
     listaEdit,
   );
   res.send(updateLista);
 };
 
-const deleteListaController = (req, res) => {
-    const idParam = req.params.id;
-    listasService.deleteListaService(idParam);
-    res.send({ message: 'Lista deletada com sucesso!' });
-  };
+const deleteListaController = async (req, res) => {
+  const idParam = req.params.id;
+
+  await listasService.deleteListaService(idParam);
+
+  res.send({ message: 'Tarefa deletada com sucesso da lista!' });
+};
 
 module.exports = {
   findAllListasController,
-  findByIdListaController,	
+  findByIdListaController,
   createListaController,
   updateListaController,
   deleteListaController,
 };
-

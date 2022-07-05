@@ -1,52 +1,31 @@
-const listas = [
-  {
-    id: 1,
-    tarefa: 'Fazer compras',
-    hora: '14:30',
-    local: 'Mercado Costa Azul',
+const Lista = require('../models/Lista')
 
-    
-  },
-  {
-    id: 2,
-    tarefa: 'Ir ao Médico',
-    hora: '8:40',
-    local: 'Climaze',
-  },
-  {
-    id: 3,
-    tarefa: 'Cinema com Esposa',
-    hora: '20:15',
-    local: ' kinoplex',
-  },
-];
 
-const findAllListasService = () => {
+const findAllListasService = async() => {
+  const listas = await Lista.find();
   return listas;
 };
 
-const findByIdListaService = (parametroId) => {
-  return listas.find((lista) => lista.id === parametroId);
+const findByIdListaService = async (parametroId) => {
+  const lista = await Lista.findById (parametroId)
+  return lista;
 };
 
 
-const createListaService = (newLista)=>{
-    const newId = listas.length + 1;
-    newLista.id = newId;
-    listas.push(newLista);
-    return newLista;
-}
-const updateListaService = (id, listaEdited)=>{
-    listaEdited['id'] = id;
-    const listaIndex = listas.findIndex((lista) => lista.id == id);
-    listas[listaIndex] = listaEdited;
-    return listaEdited;
-}
+const createListaService = async (novaLista) => {
+  const listaCriada = await Lista.create(novaLista)
+  return listaCriada;
+};
 
-const deleteListaService = (id)=>{
-  const listaIndex = listas.findIndex((lista) => lista.id == id);
-  return listas.splice(listaIndex, 1);
-}
+const updateListaService = async (id, listaEdited)=>{
+    const listaUpdate = await Lista.findByIdAndUpdate(id, listaEdited)
+    return listaUpdate;
+}; 
+
+const deleteListaService = async(id)=>{
+  return await Lista.findByIdAndDelete(id);
+  
+};
 
 
 module.exports = {

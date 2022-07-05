@@ -1,4 +1,5 @@
 # Projeto1-M3
+
 <h1 align="center"> To do List Back End</h1>
 
 <p align="center">
@@ -13,12 +14,9 @@
 
 <br>
 
-
-
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
-
 
 - JavaScript
 - NodeJS
@@ -28,9 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto desenvolvido como meio de avaliação do curso de desenvolvedor full stack da @blueEdtech.  
-
-
+Projeto desenvolvido como meio de avaliação do curso de desenvolvedor full stack da @blueEdtech.
 
 ## :memo: Licença
 
