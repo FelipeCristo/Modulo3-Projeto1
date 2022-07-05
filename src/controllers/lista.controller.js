@@ -46,7 +46,11 @@ const updateListaController = async (req, res) => {
 const deleteListaController = async (req, res) => {
   const idParam = req.params.id;
 
-  await listasService.deleteListaService(idParam);
+  // await listasService.deleteListaService(idParam);
+  const tarefa = await listasService.deleteListaService(idParam);
+  if (!tarefa) {
+    return res.status(404).send({ message: 'Tarefa não encontrada' });
+  }
 
   res.send({ message: 'Tarefa deletada com sucesso da lista!' });
 };

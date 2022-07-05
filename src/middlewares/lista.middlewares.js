@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
-const validID = (req, res, next) => {
-  const idParam = req.params.id;
+const validID = async (req, res, next) => {
+  const idParam = await req.params.id;
   if (!mongoose.Types.ObjectId.isValid(idParam)) {
     return res.status(400).send({ message: 'Digite um ID válido para busca!' });
   }
+
   next();
 };
 

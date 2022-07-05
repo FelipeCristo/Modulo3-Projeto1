@@ -7,6 +7,6 @@ route.get('/listas-de-tarefas', controllerListas.findAllListasController);
 route.get('/lista/:id', validID, controllerListas.findByIdListaController);
 route.post('/create',validObjectBody, controllerListas.createListaController);
 route.put('/update/:id', validID, validObjectBody,  controllerListas.updateListaController);
-route.delete('/delete/:id', validID, validObjectBody,  controllerListas.deleteListaController);
+route.delete('/delete/:id', validID,  controllerListas.deleteListaController);
 
 module.exports = route;
